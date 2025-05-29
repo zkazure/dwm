@@ -165,8 +165,9 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_q,          spawn,                  {.v = (const char*[]){ "sysact", NULL } } },
 	{ MODKEY,			XK_w,          spawn,                  {.v = (const char*[]){ BROWSER, NULL } } },
 	{ MODKEY|ShiftMask,		XK_w,          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "nmtui", NULL } } },
-	{ MODKEY,			XK_e,          spawn,                  SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks; rmdir ~/.abook 2>/dev/null") },
-	{ MODKEY|ShiftMask,		XK_e,          spawn,                  SHCMD(TERMINAL " -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
+
+	{ MODKEY,		        XK_e,          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "emacsclient", "-c", NULL } } },
+	// { MODKEY|ShiftMask,		XK_e,          spawn,                  SHCMD(TERMINAL " -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
 	{ MODKEY,			XK_r,          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "lfub", NULL } } },
 	{ MODKEY|ShiftMask,		XK_r,          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "htop", NULL } } },
 	{ MODKEY,			XK_t,          setlayout,              {.v = &layouts[0]} }, /* tile */
@@ -179,16 +180,16 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_i,          setlayout,              {.v = &layouts[7]} }, /* centeredfloatingmaster */
 	{ MODKEY,			XK_o,          incnmaster,             {.i = +1 } },
 	{ MODKEY|ShiftMask,		XK_o,          incnmaster,             {.i = -1 } },
-	{ MODKEY,			XK_p,          spawn,                  {.v = (const char*[]){ "mpc", "toggle", NULL } } },
-	{ MODKEY|ShiftMask,		XK_p,          spawn,                  SHCMD("mpc pause; pauseallmpv") },
-	{ MODKEY,			XK_bracketleft, spawn,                 {.v = (const char*[]){ "mpc", "seek", "-10", NULL } } },
-	{ MODKEY|ShiftMask,		XK_bracketleft, spawn,                 {.v = (const char*[]){ "mpc", "seek", "-60", NULL } } },
-	{ MODKEY,			XK_bracketright, spawn,                {.v = (const char*[]){ "mpc", "seek", "+10", NULL } } },
-	{ MODKEY|ShiftMask,		XK_bracketright, spawn,                {.v = (const char*[]){ "mpc", "seek", "+60", NULL } } },
+	// { MODKEY,			XK_p,          spawn,                  {.v = (const char*[]){ "mpc", "toggle", NULL } } },
+	// { MODKEY|ShiftMask,		XK_p,          spawn,                  SHCMD("mpc pause; pauseallmpv") },
+	// { MODKEY,			XK_bracketleft, spawn,                 {.v = (const char*[]){ "mpc", "seek", "-10", NULL } } },
+	// { MODKEY|ShiftMask,		XK_bracketleft, spawn,                 {.v = (const char*[]){ "mpc", "seek", "-60", NULL } } },
+	// { MODKEY,			XK_bracketright, spawn,                {.v = (const char*[]){ "mpc", "seek", "+10", NULL } } },
+	// { MODKEY|ShiftMask,		XK_bracketright, spawn,                {.v = (const char*[]){ "mpc", "seek", "+60", NULL } } },
 	{ MODKEY,			XK_backslash,  view,                   {0} },
 	/* { MODKEY|ShiftMask,		XK_backslash,  spawn,                  SHCMD("") }, */
 
-	{ MODKEY,			XK_a,          togglegaps,             {0} },
+	// { MODKEY,			XK_a,          togglegaps,             {0} },
 	{ MODKEY|ShiftMask,		XK_a,          defaultgaps,            {0} },
 	{ MODKEY,			XK_s,          togglesticky,           {0} },
 	/* { MODKEY|ShiftMask,		XK_s,          spawn,                  SHCMD("") }, */
@@ -219,8 +220,8 @@ static const Key keys[] = {
 	{ MODKEY,			XK_b,          togglebar,              {0} },
 	/* { MODKEY|ShiftMask,		XK_b,          spawn,                  SHCMD("") }, */
 	{ MODKEY,			XK_n,          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "nvim", "-c", "VimwikiIndex", NULL } } },
-	{ MODKEY|ShiftMask,		XK_n,          spawn,                  SHCMD(TERMINAL " -e newsboat ; pkill -RTMIN+6 dwmblocks") },
-	{ MODKEY,			XK_m,          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "ncmpcpp", NULL } } },
+	// { MODKEY|ShiftMask,		XK_n,          spawn,                  SHCMD(TERMINAL " -e newsboat ; pkill -RTMIN+6 dwmblocks") },
+	// { MODKEY,			XK_m,          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "ncmpcpp", NULL } } },
 	{ MODKEY|ShiftMask,		XK_m,          spawn,                  SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_comma,      spawn,                  {.v = (const char*[]){ "mpc", "prev", NULL } } },
 	{ MODKEY|ShiftMask,		XK_comma,      spawn,                  {.v = (const char*[]){ "mpc", "seek", "0%", NULL } } },
